@@ -95,6 +95,11 @@ body{
   align-items: flex-start;
 }
 
+.no-film{
+  margin-left: 30%;
+  margin-top: 10%;
+}
+
 .peli-item{
   flex-grow: 1; /* De esta forma cada elemento va a compartir el un espacio equitativo dentro del contenedor */
   background: white;

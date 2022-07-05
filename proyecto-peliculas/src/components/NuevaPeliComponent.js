@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
+import { SaveOnStorage } from '../helpers/SaveOnStorage';
 
-export const NuevaPeliComponent = () => {
+export const NuevaPeliComponent = ({setListState}) => {
 
     const titleSection = "Añadir película";
 
@@ -29,30 +30,13 @@ export const NuevaPeliComponent = () => {
         // Guardamos el estado
         setFilmState(film);
 
-        //Guardar en el almacenamiento local
-        saveOnStorage(film);
+        // Vamos a actualizar el estado del listado principal. Vamos a agregar a los elementos que ya había (...) uno nuevo.
+        setListState(items => {
+            return [...items, film];
+        });
 
-    }
-
-    const saveOnStorage = film => {
-
-        //Conseguir los elementos que ya tenemos en el localStorage. El parse es para convertirlo en un objeto de Javascript usable
-        let items = JSON.parse(localStorage.getItem('films'));
-
-        //Comprobamos si es un array
-        if (Array.isArray(items)){
-            //Guardar dentro del array un elemento nuevo
-            items.push(film);
-        } else{
-            //Crear un array con la película nueva
-            items = [film];
-        }
-
-        //Guardar en el localStorage
-        localStorage.setItem('films', JSON.stringify(items));
-
-        //Devolver objeto
-        return film;
+        // Guardar en el almacenamiento local (en este caso vamos a hacerlo llamando al helper, importándolo)
+        SaveOnStorage('films', film); 
 
     }
 

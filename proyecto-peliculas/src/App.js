@@ -1,8 +1,12 @@
+import { useState } from "react";
 import { BuscadorComponent } from "./components/BuscadorComponent";
 import { ListadoComponent } from "./components/ListadoComponent";
 import { NuevaPeliComponent } from "./components/NuevaPeliComponent";
 
 function App() {
+
+  const [listState, setListState] = useState([]);
+
   return (
     <div className="layout">
         {/* Cabecera */}
@@ -26,8 +30,8 @@ function App() {
         {/* Contenido principal */}
         <section className="content">
 
-          {/* Aquí van el listado de películas */}
-          <ListadoComponent/>
+          {/* Aquí van el listado de películas - Le pasamos los estados al componente como props */}
+          <ListadoComponent listState={listState} setListState={setListState}/>
             
         </section>
 
@@ -35,7 +39,7 @@ function App() {
         <aside className="lateral">
             <BuscadorComponent/>
 
-            <NuevaPeliComponent/>
+            <NuevaPeliComponent setListState={setListState}/>
         </aside>
 
         {/* Footer de la web (añadir página web personal cuando se tenga)*/}
