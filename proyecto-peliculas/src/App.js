@@ -1,23 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import { BuscadorComponent } from "./components/BuscadorComponent";
+import { ListadoComponent } from "./components/ListadoComponent";
+import { NuevaPeliComponent } from "./components/NuevaPeliComponent";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="layout">
+        {/* Cabecera */}
+        <header className="header">
+            <div className="logo">
+                <div className="play"></div>
+            </div>
+            <h1>Películas</h1>
+        </header>
+
+        {/* Barra de navegación */}
+        <nav className="nav">
+            <ul>
+                <li><a href="/#">Inicio</a></li>
+                <li><a href="/#">Películas</a></li>
+                <li><a href="/#">Blog</a></li>
+                <li><a href="/#">Contacto</a></li>
+            </ul>
+        </nav>
+
+        {/* Contenido principal */}
+        <section className="content">
+
+          {/* Aquí van el listado de películas */}
+          <ListadoComponent/>
+            
+        </section>
+
+        {/* Barra lateral */}
+        <aside className="lateral">
+            <BuscadorComponent/>
+
+            <NuevaPeliComponent/>
+        </aside>
+
+        {/* Footer de la web (añadir página web personal cuando se tenga)*/}
+        <footer className="footer">
+            &copy; Proyecto del Máster en React de Víctor Robles en Udemy - <a href="/#">Mª Carmen Arias</a>
+        </footer>
     </div>
   );
 }
