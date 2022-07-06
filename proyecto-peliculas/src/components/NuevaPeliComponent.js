@@ -1,13 +1,13 @@
-import React, { useState } from 'react'
-import { SaveOnStorage } from '../helpers/SaveOnStorage';
+import React, { useState } from "react"
+import { SaveOnStorage } from "../helpers/SaveOnStorage";
 
 export const NuevaPeliComponent = ({setListState}) => {
 
     const titleSection = "Añadir película";
 
     const [filmState, setFilmState] = useState({
-        title: '',
-        description: ''
+        title: "",
+        description: ""
     });
 
     const { title, description } = filmState; //Desestruturación del objeto
@@ -36,7 +36,7 @@ export const NuevaPeliComponent = ({setListState}) => {
         });
 
         // Guardar en el almacenamiento local (en este caso vamos a hacerlo llamando al helper, importándolo)
-        SaveOnStorage('films', film); 
+        SaveOnStorage("films", film); 
 
     }
 
@@ -49,9 +49,10 @@ export const NuevaPeliComponent = ({setListState}) => {
         </strong>
 
         <form onSubmit={getDataForm}>
-            <input type="text" id='title' name='title' placeholder="Título"/>
-            <textarea id='description' name='description' placeholder="Descripción"></textarea>
-            <input id='save' type="submit" value="Guardar"/>
+            <input type="text" id="title" name="title" placeholder="Título"/>
+            <textarea id="description" name="description" placeholder="Descripción"></textarea>
+            <input id="save" type="submit" value="Guardar"/>
+            <input id="reset" type="reset" value="Limpiar"/>
         </form>
     </div>
   )

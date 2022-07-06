@@ -31,13 +31,13 @@ function App() {
         <section className="content">
 
           {/* Aquí van el listado de películas - Le pasamos los estados al componente como props */}
-          <ListadoComponent listState={listState} setListState={setListState}/>
+          <ListadoComponent listState={listState} setListState={setListState} />
             
         </section>
 
         {/* Barra lateral */}
         <aside className="lateral">
-            <BuscadorComponent/>
+            <BuscadorComponent listState={listState} setListState={setListState} />
 
             <NuevaPeliComponent setListState={setListState}/>
         </aside>
