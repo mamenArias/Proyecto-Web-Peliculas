@@ -15,6 +15,8 @@ export const ListadoComponent = ({listState, setListState}) => {
   const getFilms = () => {
     let films = JSON.parse(localStorage.getItem("films"));
 
+    films === null && (films = []);
+
     setListState(films);
 
     return films;
