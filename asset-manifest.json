@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Proyecto-Web-Peliculas/static/css/main.a00e6c4f.css",
+    "main.js": "/Proyecto-Web-Peliculas/static/js/main.ae5e4349.js",
+    "index.html": "/Proyecto-Web-Peliculas/index.html",
+    "main.a00e6c4f.css.map": "/Proyecto-Web-Peliculas/static/css/main.a00e6c4f.css.map",
+    "main.ae5e4349.js.map": "/Proyecto-Web-Peliculas/static/js/main.ae5e4349.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a00e6c4f.css",
+    "static/js/main.ae5e4349.js"
+  ]
+}
